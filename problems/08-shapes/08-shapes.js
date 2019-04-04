@@ -21,5 +21,50 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  
+//loop for tracking height
+  for(let h = 1; h < height; h++){
+    //loop for tracking the space before characters
+    for(let s = 1; s < height-1; s++ ){
+      console.log("");
+      //loop for tracking characters
+      for(let c = 1; c <=2; c++) {
+        console.log(character);
+      }
+      console.log();
+    }
 }
+
+}
+function getShape(shape, height, character)
+  //check if height is an odd number
+  if (height %2 == 0) {
+    return console.log ('Please enter an odd number for the height!');
+  }
+  switch (shapes) {
+    case square :
+      shapeName = 'Square';
+      shapeHeight = height
+      shapeCharacter = '%'
+      printShape(shapeName, shapeHeight, shapeCharacter);
+      break;
+    case triangle :
+      shapeName = 'Triangle';
+      shapeHeight = height
+      shapeCharacter = '%'
+      printShape(shapeName, shapeHeight, shapeCharacter);
+      break;
+    case diamond :
+      shapeName = 'Diamond';
+      shapeHeight = height
+      shapeCharacter = '%'
+      printShape(shapeName, shapeHeight, shapeCharacter);
+      break;
+  }
+  return correctShape;
+
+let inputShapeName = 'Square';
+let inputShapeHeight = 9;
+let inputShapeCharacter = '3';
+
+getShape(inputShapeName, inputShapeHeight, inputShapeCharacter);
+console.log(correctShape);
