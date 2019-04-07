@@ -48,20 +48,20 @@ function printShape(shape, height, character) {
       break;
     case 'diamond':
       console.log('Diamond');
-      let spaceBefore = ((height - 1) / 2) - 1;
+      let spaceBefore = ((height - 1) / 2);
       let charAfter = height - 2;
       let charBefore = 1;
       //loop for printing characters
       for (let c = 1; c < height + 1; c++) {
         if (c < (height + 1) / 2) {
-          console.log(`${" ".repeat(spaceBefore)} ${character.repeat(charBefore)}`);
+          console.log(`${" ".repeat(spaceBefore)}${character.repeat(charBefore)}`);
           spaceBefore--;
           charBefore = charBefore + 2;
         } else if (c === (height + 1) / 2) {
           console.log(character.repeat(height));
           spaceBefore++;
         } else if (c > height / 2) {
-          console.log(`${" ".repeat(spaceBefore)} ${character.repeat(charAfter)}`);
+          console.log(`${" ".repeat(spaceBefore)}${character.repeat(charAfter)}`);
           spaceBefore++;
           charAfter = charAfter - 2;
         }
@@ -69,10 +69,9 @@ function printShape(shape, height, character) {
       break;
   }
 }
-
 //Which shape would you like to print? Specify params to test function above!
 let inputShapeName = 'Square';
-let inputShapeHeight = 10;
+let inputShapeHeight = 6;
 let inputShapeCharacter = '*';
 
 printShape(inputShapeName.toLowerCase(), inputShapeHeight, inputShapeCharacter);

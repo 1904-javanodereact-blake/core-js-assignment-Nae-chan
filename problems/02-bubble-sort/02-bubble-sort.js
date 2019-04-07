@@ -12,11 +12,10 @@ function bubbleSort(numArray) {
                 let temp = numArray[i];
                 numArray[i] = numArray[i + 1];
                 numArray[i + 1] = temp;
-             }
+            }
         }
     } while (swapped);
     console.log(numArray);
 }
-
-//pass in an array to test the above functio
+//pass in an array to test the above function
 bubbleSort([5, 4, 3, 2, 1]);

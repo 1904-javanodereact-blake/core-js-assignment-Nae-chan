@@ -8,6 +8,5 @@ function reverseStr(someStr) {
     array.reverse();
     console.log(array);
 }
-
 //Insert a string to test the function above
 reverseStr("axolotl")

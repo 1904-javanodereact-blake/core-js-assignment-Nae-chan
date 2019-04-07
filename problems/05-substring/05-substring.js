@@ -16,13 +16,11 @@ function substring(someStr, startIndex, endIndex) {
     let chars = someStr.split('');
     console.log(chars.slice(startIndex, endIndex));
 }
-
 //this function throws an error if variable type is not string
 function checkForString(someStr) {
     if (typeof someStr !== 'string') {
         throw "Input is incorrect. Please enter a string!";
     }
 }
-
 //enter a string, start index, and end index to test the function above
 substring(1, 0, 3);

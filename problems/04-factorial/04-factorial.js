@@ -7,10 +7,8 @@ function factorial(sumNum) {
         return 1;
     } else {
         return sumNum * factorial(sumNum - 1);
-        }
+    }
 }
-
 //insert a number to test the function above
 let number = 5;
-factorial (number);
 console.log(`the factorial of ${number} is ${factorial(number)}`);

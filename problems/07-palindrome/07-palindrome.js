@@ -10,17 +10,16 @@ function isPalindrome(someStr) {
         return dup;
     });
     reverseArray.reverse();
-    console.log(array, reverseArray, someStr);
+    console.log(array, reverseArray);
 
-    //check if it is palindrome
+    //check if it is not a palindrome
     for (i = 0; i < array.length; i++) {
-        if (array[0] === reverseArray[0]) {
-            return console.log(`${true}; This IS a palindrome!`);
+        if (array[i] !== reverseArray[i]) {
+            return console.log(`${false}; NOT a palindrome!`);
         }
     }
     // otherwise it is a palindrome
-    return console.log(`${false}; NOT a palindrome`);
+    return console.log(`${true}; This IS a palindrome!`);
 }
-
 //pass in a string to check function above
-isPalindrome('aab');
+isPalindrome('asaf');
