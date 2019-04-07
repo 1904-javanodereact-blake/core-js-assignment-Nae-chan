@@ -20,6 +20,10 @@ Example for printShape("Diamond", 5, "*");
  ***
   * 
 */
+
+//For this problem, I could have alternatively used arrays with
+//the .fill and .join methods, but .repeat is much cleaner!
+
 function printShape(shape, height, character) {
   //check if height is an odd number
   if (height % 2 == 0) {
@@ -30,53 +34,45 @@ function printShape(shape, height, character) {
       shapeName = 'square';
       console.log('Square');
       //loop for printing characters
-        for (let c = 1; c < height + 1; c++) {
-          console.log(character.repeat(height));
-        }
+      for (let c = 1; c < height + 1; c++) {
+        console.log(character.repeat(height));
+      }
       break;
     case 'triangle':
       shapeName = 'Triangle';
       console.log('Triangle');
       //loop for printing characters
-        for (let c = 1; c < height + 1; c++) {
-          console.log(character.repeat(c));
-        }
+      for (let c = 1; c < height + 1; c++) {
+        console.log(character.repeat(c));
+      }
       break;
     case 'diamond':
       console.log('Diamond');
-      //loop for tracking the space before characters
-      // for (let s = 1; s < height-1; s++) {
-      //   console.log(`${"".repeat(s)}`)
-      // }
-
-        //loop for tracking characters
-        for (let c = 1; c < height + 1; c++) {
-          let a;
-let b;
-          let space = " ";
-          let countSpace = 5;
-          a = character.repeat(c);
-          b = space.repeat(countSpace);
-          countSpace ++;
-          console.log (`${b}...${a}`);
-          
+      let spaceBefore = ((height - 1) / 2) - 1;
+      let charAfter = height - 2;
+      let charBefore = 1;
+      //loop for printing characters
+      for (let c = 1; c < height + 1; c++) {
+        if (c < (height + 1) / 2) {
+          console.log(`${" ".repeat(spaceBefore)} ${character.repeat(charBefore)}`);
+          spaceBefore--;
+          charBefore = charBefore + 2;
+        } else if (c === (height + 1) / 2) {
+          console.log(character.repeat(height));
+          spaceBefore++;
+        } else if (c > height / 2) {
+          console.log(`${" ".repeat(spaceBefore)} ${character.repeat(charAfter)}`);
+          spaceBefore++;
+          charAfter = charAfter - 2;
         }
-        //loop for tracking characters
-        for (let s = 1; s < height + 1; s++) {
-          let space = "";
-          let countSpace = 1;
-         
-          space ++;
-          
-        }
-        //console.log (`${b}...${a}`);
-      
+      }
       break;
   }
 }
-//which shape would you like to print? Specify params to test function above!
-let inputShapeName = 'diamond';
-let inputShapeHeight = 3;
-let inputShapeCharacter = '3';
+
+//Which shape would you like to print? Specify params to test function above!
+let inputShapeName = 'Square';
+let inputShapeHeight = 10;
+let inputShapeCharacter = '*';
 
 printShape(inputShapeName.toLowerCase(), inputShapeHeight, inputShapeCharacter);
