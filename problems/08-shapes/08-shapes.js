@@ -28,43 +28,43 @@ function printShape(shape, height, character) {
       console.log("");
       //loop for tracking characters
       for(let c = 1; c <=2; c++) {
-        console.log(character);
+        console.log(character.repeat(c));
       }
-      console.log();
+      
     }
 }
-
+console.log(shape);
 }
-function getShape(shape, height, character)
+function getShape(shape, height, character) {
   //check if height is an odd number
   if (height %2 == 0) {
     return console.log ('Please enter an odd number for the height!');
   }
-  switch (shapes) {
-    case square :
-      shapeName = 'Square';
+  switch (shape) {
+    case 'square' :
+      shapeName = 'square';
       shapeHeight = height
-      shapeCharacter = '%'
+      shapeCharacter = character
       printShape(shapeName, shapeHeight, shapeCharacter);
       break;
-    case triangle :
+    case 'triangle' :
       shapeName = 'Triangle';
       shapeHeight = height
-      shapeCharacter = '%'
+      shapeCharacter = character
       printShape(shapeName, shapeHeight, shapeCharacter);
       break;
-    case diamond :
+    case 'diamond' :
       shapeName = 'Diamond';
       shapeHeight = height
-      shapeCharacter = '%'
+      shapeCharacter = character
       printShape(shapeName, shapeHeight, shapeCharacter);
       break;
   }
-  return correctShape;
+  return shape;
+}
 
 let inputShapeName = 'Square';
-let inputShapeHeight = 9;
+let inputShapeHeight = 3;
 let inputShapeCharacter = '3';
 
-getShape(inputShapeName, inputShapeHeight, inputShapeCharacter);
-console.log(correctShape);
+getShape(inputShapeName.toLowerCase(), inputShapeHeight, inputShapeCharacter);
